@@ -6,18 +6,18 @@ square = [list(map(int, input().split())) for i in range(n)]
 a, b, c = 0, 0, 0
 
 
-def dac(data, x, y, size):
+def dac(data, x, y, size): #분할정복은 재귀로 구현 
     first_node = data[x][y]
     for i in range(x, x+size):
         for j in range(y, y+size):
          	# 다른 데이터가 존재한다면
             if data[i][j] != first_node:
                 break
-        else:
+        else: #반복문이 제대로 끝난다면 else가 실행됨
             continue
-        break
+        break #반복문이 제대로 끝나지 않는다면 break실행 
 
-    # 단일 데이터 종류로 구성되었다면
+    # 단일 데이터 종류로 구성되었다면, for랑 같은 단위의 else는 반복문이 모두 실행되었을 때만 실행됨 
     else:
         global a, b, c
         if first_node == -1:
@@ -33,7 +33,8 @@ def dac(data, x, y, size):
     div = size//3
     for i in range(3):
         for j in range(3):
-            dac(data, x+i*div, y+j*div, div)
+            dac(data,x+i*div,y+j*div,div)
+
 
 
 dac(square, 0, 0, n)

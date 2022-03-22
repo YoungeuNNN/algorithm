@@ -14,7 +14,7 @@ def change_zero(light):
             cnt+=1
             light[i-1] = '0' if light[i-1] == '1' else '0'
             light[i] = '0' if light[i] == '1' else '0'
-            if i<len(light)-1:
+            if i<len(light)-1: 
                 light[i+1] = '0' if light[i-1] == '1' else '0'
         if hope == light:
             return cnt
