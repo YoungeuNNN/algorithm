@@ -1,11 +1,5 @@
 n,r = map(int,input().split())
-arr = [[] for i in range(n)]
-visited = [False]*n
 
-for _ in range(r):
-    a,b = map(int,input().split())
-    arr[a].append(b)
-    arr[b].append(a)
 
 print(arr)
 def dfs(n,count):
