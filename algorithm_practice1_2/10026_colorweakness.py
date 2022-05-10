@@ -42,3 +42,5 @@ for i in range(n):
             two_cnt +=1
             
 print(three_cnt,two_cnt)
+
+
